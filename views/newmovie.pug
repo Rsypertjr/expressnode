@@ -1,0 +1,31 @@
+doctype html 
+html 
+    head 
+        if(type == "new")
+            title New Movie
+        else
+            title Edit Movie
+        include ./header.pug
+    body 
+        include ./navbar.pug
+        div.container
+            h2(style = hstyle) #{header_message}
+            if(type = "edit")
+                h3(style = "color:blue") You Must Re-Enter All Fields!  
+            form(action = action_route  method = api_type) 
+                div.form-group
+                    label(for = "movieID") Id 
+                    input.form-control(id = "movieID" name="mid" type="text" placeholder= movie.id value = movie.id disabled="disabled")   
+                input(type="hidden" name = "id" value = movie.id)          
+                div.form-group
+                    label(for = "movieName") Name 
+                    input.form-control(id = "movieName" name = "name" type="text" placeholder= movie.name) 
+                div.form-group
+                    label(for = "movieYear") Year
+                    br
+                    input.form-contol(id = "movieYear" name = "year" type="number" placeholder = "  "+movie.year) 
+                div.form-group 
+                    label(for = "movieRating") Rating
+                    input.form-control(id = "movieRating" name = "rating" type="number" step="0.1" min="0" max="10" placeholder = movie.rating) 
+                div.form-group
+                    button.btn.btn-primary(type = "submit") #{button_text}

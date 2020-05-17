@@ -1,0 +1,26 @@
+nav.navbar.navbar-inverse 
+    div.container-fluid 
+        div.navbar-header 
+            a.navbar-brand(href = "#") Movie Data 
+        ul.nav.navbar-nav 
+            if(menu1)
+                li.active 
+                    a(href=menu1link) #{menu1}
+            if(menu2)
+                li 
+                    a(href=menu2link) #{menu2}
+            if(menu3)
+                li 
+                    a(href=menu3link) #{menu3}
+        ul.nav.navbar-nav.navbar-right
+            if(loggedin)
+                li
+                    a(href='/logout') Logout 
+                        span.glyphicon.glyphicon-log-out
+            else 
+                li
+                    a(href='/signup') Sign Up 
+                        span.glyphicon.glyphicon-user
+                li
+                    a(href='/login') Login 
+                        span.glyphicon.glyphicon-log-in 

@@ -1,0 +1,22 @@
+doctype html
+html    
+    head
+        title Signup
+        include ./header.pug
+    body  
+        include ./navbar.pug
+        div.container
+            div(style="text-align:center")
+                h2 Log In Screen     
+            if(message)
+                h3(style=mess_style) #{message}    
+        div.container
+            form(action = "/login" method = "POST")
+                div.form-group
+                    label(for="loginUserName") User Name
+                    input.form-control(id="loginUserName" name = "username" type = "text" required placeholder = unplacehdr)  
+                div.form-group 
+                    label(for="loginPassword") Password
+                    input.form-control(id = "loginPassword" name = "password" type = "password" required placeholder = passplacehdr) 
+                div.form-group    
+                    button.btn.btn-primary(type = "Submit") Log in

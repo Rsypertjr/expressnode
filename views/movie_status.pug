@@ -1,0 +1,33 @@
+doctype html 
+html 
+    head 
+        title Movie Dashboard 
+        include ./header.pug
+    body 
+        include ./navbar.pug
+        if(movies)
+            div.container               
+                div(style="text-align:center")
+                    h2(style = "color:blue; display:inline") #{message}
+                    span(style = "color:black;font-size:3em;margin-left:0.5em;display:inline") #{theuser} 
+                h2(style = "color:blue;text-align:center")             
+                table.table.table-bordered.table-striped
+                    thead
+                        tr 
+                            th ID
+                            th Name 
+                            th Year 
+                            th Rating 
+                            th Edit 
+                            th Delete 
+                    tbody 
+                    each movie in movies
+                        tr 
+                            td #{movie.id} 
+                            td #{movie.name} 
+                            td #{movie.year} 
+                            td #{movie.rating} 
+                            td 
+                                a.btn.btn-info(role="button" href = "/movies/edit/" + movie.id style = "position:relative;display: inline;width: 7em;height: auto;background: #4E9CAF;padding: 5px;text-align: center;border-radius: 2px;color: white;font-weight: bold;text-decoration:none") Edit Movie
+                            td 
+                                a.btn.btn-warning(role="button" href = "/movies/delete/" + movie.id style = "position:relative;display: inline;width: 7em;height: auto;background: red;padding: 5px;text-align: center;border-radius: 2px;color: white;font-weight: bold;text-decoration:none") Delete Movie               

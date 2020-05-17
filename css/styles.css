@@ -1,0 +1,26 @@
+body {width:100%;height:100%;background-color:rgb(250, 243, 233)}
+
+@keyframes example {
+    0% {font-size: 0em;color:red;border-color:red green blue yellow}
+    15% {border-color:yellow red green blue}
+    25% {color:yellow;border-color:blue yellow red green}
+    37% {border-color:green blue yellow red}
+    50% {color:blue;border-color:red green blue yellow}
+    75% {border-color:yellow red green blue}
+    100% {font-size: 3em;color:green;border-color:blue yellow red green}
+  }
+
+
+#mdstitle{
+    margin-top:3%;
+    margin-bottom:3%;
+    font-size:3em;
+    padding-top:0.45em;
+    height:2.25em;   
+    color:blue;
+    border: 2px green dashed;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-align:center;
+}

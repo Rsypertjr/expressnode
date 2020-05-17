@@ -1,0 +1,26 @@
+doctype html 
+html    
+    head
+        title Signup
+        include ./header.pug
+    body(style="background-color:lightgray")        
+        include ./navbar.pug        
+        div.container            
+            div#mdstitle Welcome to Movie Data
+            div(style="text-align:center") 
+                if(message)
+                    h2 #{message}
+                else
+                    h2 Account Set Up
+            if(message)
+                div(style = "text-align:center;color:rgb(200,0,200)") 
+                    h3 #{message}
+            form(action = "/signup" method = "post") 
+                div.form-group
+                    label(for="inputUserName") Account User Name
+                    input.form-control(id="inputUserName" name="username" type = "text" placeholder = "Enter User Name" )
+                div.form-group 
+                    label(for = "inputPassword") Account Password
+                    input.form-control(id = "inputPassword" name="password" type = "password" placeholder = "Enter Password") 
+                div.form-group
+                    button.btn.btn-primary(type = "submit") Sign me up! 
